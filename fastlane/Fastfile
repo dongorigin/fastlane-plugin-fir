@@ -1,3 +1,7 @@
 lane :test do
-  fir
+  fir(
+    api_token: '...', # your token
+    apk_path: './fastlane/apk/app-release.apk',
+    changelog: 'Changelog'
+  )
 end
