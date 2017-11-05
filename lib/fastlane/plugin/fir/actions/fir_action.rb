@@ -6,9 +6,10 @@ module Fastlane
 
     class FirAction < Action
       def self.run(params)
-        script = "fir publish #{params[:apk_path]} -T #{params[:api_token]}"
-        script += " -c #{params[:changelog]}" unless params[:changelog].empty?
-        sh script
+        command = ["fir publish #{params[:apk_path]}"]
+        command << "-T #{params[:api_token]}"
+        command << "-c #{params[:changelog]}" unless params[:changelog].empty?
+        sh command
 
         # Actions.lane_context[SharedValues::FIR_DOWNLOAD_LINK] = ""
       end
@@ -31,14 +32,14 @@ module Fastlane
                                        description: "API Token for fir.im",
                                        sensitive: true,
                                        verify_block: proc do |value|
-                                          UI.user_error!("No API token for FirAction given, pass using `api_token: 'token'`") unless (value and not value.empty?)
+                                       UI.user_error!("No API token for FirAction given, pass using `api_token: 'token'`") unless (value and not value.empty?)
                                        end),
           FastlaneCore::ConfigItem.new(key: :apk_path,
                                        env_name: "FL_FIR_APK_PATH",
                                        description: "Path to your APK file. Optional if you use the gradle action",
                                        default_value: lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH],
                                        verify_block: proc do |value|
-                                        UI.user_error!("Couldn't find file at path '#{value}'") unless File.exist?(value)
+                                         UI.user_error!("Couldn't find file at path '#{value}'") unless File.exist?(value)
                                        end),
           FastlaneCore::ConfigItem.new(key: :changelog,
                                        env_name: "FL_FIR_CHANGELOG",
@@ -52,7 +53,7 @@ module Fastlane
           # ['FIR_DOWNLOAD_LINK', 'The newly generated download link for this build']
         ]
       end
-      
+
       def self.authors
         ["dongorigin"]
       end
