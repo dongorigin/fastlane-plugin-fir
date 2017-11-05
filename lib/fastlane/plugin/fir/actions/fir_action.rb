@@ -42,7 +42,7 @@ module Fastlane
                                        end),
           FastlaneCore::ConfigItem.new(key: :changelog,
                                        env_name: "FL_FIR_CHANGELOG",
-                                       description: "Release ChangeLog, support string or file path",
+                                       description: "Release changelog, support string or file path",
                                        default_value: "")
         ]
       end

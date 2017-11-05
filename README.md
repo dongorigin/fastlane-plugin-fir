@@ -7,14 +7,13 @@
 ## Getting Started
 
 This project is a [_fastlane_](https://github.com/fastlane/fastlane) plugin. To get started with `fastlane-plugin-fir`, add it to your project by running:
-
 ```bash
 fastlane add_plugin fir
 ```
 
 ## About fir
 
-Upload a new build to [fir](fir.im) for distribute the build to beta testers. Currently based on [fir-cli](https://github.com/FIRHQ/fir-cli) implementation
+Upload a new build to [fir](fir.im) for distribute the build to beta testers. Currently based on [fir-cli](https://github.com/FIRHQ/fir-cli) implementation.
 
 ## Features
 
@@ -25,13 +24,30 @@ Upload a new build to [fir](fir.im) for distribute the build to beta testers. Cu
 ## Example
 
 Check out the [example `Fastfile`](fastlane/Fastfile) to see how to use this plugin. Try it by cloning the repo, running `fastlane install_plugins` and `bundle exec fastlane test`.
+```ruby
+fir(
+    api_token: '...',
+    apk_path: './app-release.apk',
+    changelog: 'Changelog'
+)
+```
 
-**Note to author:** Please set up a sample project to make it easy for users to explore what your plugin does. Provide everything that is necessary to try out the plugin in this project (including a sample Xcode/Android project if necessary)
+## Parameters
+
+| Key       | Description                                                  |
+|-----------|--------------------------------------------------------------|
+| api_token | API Token for fir.im                                         |
+| apk_path  | Path to your APK file. Optional if you use the gradle action |
+| changelog | Release changelog, support string or file path               |
+
+To show the full documentation in your terminal, run
+```bash
+fastlane action fir
+```
 
 ## Run tests for this plugin
 
 To run both the tests, and code style validation, run
-
 ```
 rake
 ```
