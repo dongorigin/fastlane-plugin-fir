@@ -14,9 +14,13 @@ fastlane add_plugin fir
 
 ## About fir
 
-Upload a new build to fir.im
+Upload a new build to [fir](fir.im) for distribute the build to beta testers. Currently based on [fir-cli](https://github.com/FIRHQ/fir-cli) implementation
 
-**Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
+## Features
+
+- [x] support android
+- [ ] support ios
+- [ ] remove dependency fir-cli
 
 ## Example
 
