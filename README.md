@@ -1,6 +1,8 @@
 # fir plugin
 
 [![fastlane Plugin Badge](https://rawcdn.githack.com/fastlane/fastlane/master/fastlane/assets/plugin-badge.svg)](https://rubygems.org/gems/fastlane-plugin-fir)
+[![Build Status](https://travis-ci.org/dongorigin/fastlane-plugin-fir.svg?branch=master)](https://travis-ci.org/dongorigin/fastlane-plugin-fir)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/dongorigin/fastlane-plugin-fir/blob/master/LICENSE)
 
 ## Getting Started
 
