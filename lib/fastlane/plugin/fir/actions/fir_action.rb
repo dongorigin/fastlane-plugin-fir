@@ -9,7 +9,7 @@ module Fastlane
         command = ["fir publish #{params[:apk_path]}"]
         command << "-T #{params[:api_token]}"
         command << "-c \'#{params[:changelog]}\'" unless params[:changelog].empty?
-        sh command
+        sh command.join(' ')
 
         # Actions.lane_context[SharedValues::FIR_DOWNLOAD_LINK] = ""
       end
